@@ -1,6 +1,7 @@
 
 
 #include "worker.h"
+#include "functions.h"
 #include <string>
 #include <iostream>
 
@@ -8,6 +9,7 @@ Worker::Worker() {
 	name = "";
 	dayHrs = 2;
 	hrs = 8;
+	schedule = randSchedule();
 }
 
 // Worker::Worker(std::string n) {

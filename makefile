@@ -1,8 +1,8 @@
 CC=g++
 
-CFLAGS=-c -Wall
+CFLAGS=-c -Wall -std=c++11
 
-SOURCES=main.cpp worker.cpp hour.cpp
+SOURCES=main.cpp worker.cpp hour.cpp functions.cpp
 
 OBJECTS=$(SOURCES:.cpp=.o)
 

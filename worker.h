@@ -14,7 +14,7 @@ class Worker {
 	int dayHrs;
 	int hrs;
 	std::string name;
-	int* schedule = new int [73];
+	int* schedule; // = new int [73];
   public:
   	Worker();
   	//Worker(std::string n);

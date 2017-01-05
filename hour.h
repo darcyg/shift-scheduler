@@ -14,12 +14,14 @@
 
 class Hour {
     int shift;
-    Worker* workers = new Worker [20];
+    char type;
+    Worker* workers = new Worker [1];
   public:
-    Hour(int s);
+    Hour(int s,char t);
     //~Hour();
-    int getTime();
-
+    int getID();
+    char getType();
+    void show();
 };
 
 #endif
