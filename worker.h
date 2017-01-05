@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 17 November 2016
-  Last Modified: 17 November 2016
+  Last Modified: 4 January 2017
 
   This is a header file for the worker class for an automatic shift scheduler.
 */
@@ -21,10 +21,12 @@ class Worker {
   	//~Worker();
   	int getDayHrs();
   	int getHrs();
+    int* getSchedule();
   	void setSchedule(int* s);
   	void dHrs();
   	void dDayHrs();
   	void show();
+    void nameWorker(std::string n);
 };
 
 #endif

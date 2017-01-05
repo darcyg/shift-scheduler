@@ -1,8 +1,11 @@
 /*Author: Sophie Rehrig
-  Date Started: 17 November 2016
-  Last Modified: 17 November 2016
+  Date Started: 4 January 2017
+  Last Modified: 4 January 2017
 
   This is a header file for extra functions for testing for an automatic shift scheduler.
 */
 
+  #include <string>
+
   int* randSchedule();
+  std::string IDToShift(int id);

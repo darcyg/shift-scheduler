@@ -1,4 +1,9 @@
+/*Author: Sophie Rehrig
+  Date Started: 17 November 2016
+  Last Modified: 4 January 2016
 
+  This is a source code file for the worker class for an automatic shift scheduler.
+*/
 
 #include "worker.h"
 #include "functions.h"
@@ -40,6 +45,14 @@ void Worker::setSchedule(int* ts){
 	}
 }
 
+int* Worker::getSchedule() {
+	return schedule;
+}
+
 void Worker::show(){
 	std::cout << name << " needs " << dayHrs << " more daytime hours and " << hrs << " more hours in total." << std::endl;
+}
+
+void Worker::nameWorker(std::string n){
+	name = n;
 }
