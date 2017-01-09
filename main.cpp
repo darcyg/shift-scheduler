@@ -4,20 +4,23 @@
 #include "hour.h"
 // #include "worker.h"
 #include "functions.h"
+#include "info.h"
 
 
 void test() {
 	std::cout << "Testing" << std::endl;
 	Worker* me = new Worker();
 	Worker* sam = new Worker();
+	Worker* nemo = new Worker();
 	me->nameWorker("Sophie");
 	me->show();
 	sam->nameWorker("Samantha");
 	sam->show();
-	Hour* test = new Hour(0,'m',8,'h');
+	nemo->nameWorker("Nermeen");
+	Hour* test = new Hour(0,'m',8,'h',true);
 	test->show();
-	std::vector<Worker*> testvec = {me,sam};
-	dayHoursSort(testvec);
+	std::vector<Worker*> testvec = {me,sam,nemo};
+	preferenceSort(testvec,34);
 	testvec[0]->print();
 	std::cout << std::endl;
 	//test->phours();
@@ -28,11 +31,14 @@ void test() {
 }
 
 void real() {
-	//Hour* semester = new Hour [73];
+	std::vector<Hour*> week;
+	std::vector<Worker*> staff;
+	buildShifts(week);
+	buildStaff(staff);
 }
 
 
 int main() {
 	test();
-	//real();
+	real();
 }

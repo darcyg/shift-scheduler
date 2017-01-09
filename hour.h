@@ -13,16 +13,19 @@
 
 class Hour {
     int shift;
-    char day;
+    char weekday;
     int hr;
     char type;
-    //Worker* workers = new Worker [NUM_WORKERS];
+    char day;
+    Worker* worker;
   public:
-    Hour(int s,char d,int h,char t);
+    Hour(int s,char w,int h,char t,bool d);
     //~Hour();
     int getID();
     char getType();
+    bool isDay();
     void show();
+    void setWorker(Worker* w);
     //void phours();
     //int* getAval();
 };

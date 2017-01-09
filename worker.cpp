@@ -14,19 +14,17 @@ Worker::Worker() {
 	name = "";
 	dayHrs = 2;
 	hrs = 8;
+	maxHrs = 8;
 	schedule = randSchedule();
-	// std::vector<int> temp(73,0);
-	// for (int i=0;i<73;++i) {
-	// 	schedule[i] = temp[i];
-	// }
-	//schedule = {0,0,0,0};
 }
 
-// Worker::Worker(std::string n) {
-// 	name = n;
-// 	dayHrs = 2;
-// 	hrs = 8;
-// }
+Worker::Worker(std::string n, int m) {
+	name = n;
+	dayHrs = 2;
+	hrs = 8;
+	maxHrs = m;
+	schedule = randSchedule();
+}
 
 int Worker::getHrs(){
 	return hrs;
@@ -36,12 +34,23 @@ int Worker::getDayHrs(){
 	return dayHrs;
 }
 
+int Worker::getMaxHrs(){
+	return maxHrs;
+}
+
 void Worker::dHrs(){
 	--hrs;
+	--maxHrs;
 }
 
 void Worker::dDayHrs(){
 	--dayHrs;
+	--hrs;
+	--maxHrs;
+}
+
+void Worker::dMaxHrs(){
+	--maxHrs;
 }
 
 void Worker::setSchedule(std::vector<int>& ts){
@@ -64,4 +73,14 @@ void Worker::nameWorker(std::string n){
 
 void Worker::print() {
 	std::cout << name;
+}
+
+void Worker::decHrs(bool isDay, bool isNeeded) {
+	if (isDay) {
+		--dayHrs;
+		--hrs;
+	} else if (isNeeded) {
+		--hrs;
+	}
+	--maxHrs;
 }

@@ -11,8 +11,10 @@
 #include <iostream>
 #include <algorithm>
 #include <functional>
+#include <time.h>
 
 std::vector<int> randSchedule() {
+	srand(time(NULL));
 	std::vector<int> tempSchedule; // = new int [73];
 	for (int i=0;i<73;++i) {
 		tempSchedule.push_back(rand() % 3);
@@ -50,10 +52,20 @@ void preferenceSort(std::vector<Worker*>& workers, int shift) {
 	std::stable_sort(&workers[0],&workers[NUM_WORKERS],std::bind(sortByPreference,std::placeholders::_1,std::placeholders::_2,shift));
 }
 
-// Worker chooseBest(Hour hour,std::vector<Worker> workers) {
-// 	int shift = hour.getID();
-// 	for(int i=0;i<NUM_SHIFTS;++i) {
-// 		std::cout << "not done " << workers[i].getSchedule()[shift] << std::endl;
-// 	}
-// 	return workers[0];
-// }
+Worker* chooseBest(Hour* hour,std::vector<Worker*> workers,bool isDay) {
+	int shift = hour->getID();
+	for(int i=0;i<NUM_SHIFTS;++i) {
+		std::cout << "not done " << workers[i]->getSchedule()[shift] << std::endl;
+		preferenceSort(workers,shift);
+		hoursSort(workers);
+		if (isDay) {
+			dayHoursSort(workers);
+		}
+	}
+	return workers[0];
+}
+
+void fillWorker(Hour* hour, Worker* worker) {
+	hour->setWorker(worker);
+	worker->decHrs(hour->isDay(),worker->getHrs()!=0);
+}

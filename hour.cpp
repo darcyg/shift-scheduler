@@ -9,11 +9,13 @@
 #include <string>
 #include <iostream>
 
-Hour::Hour(int s, char d, int h, char t){
+Hour::Hour(int s, char w, int h, char t, bool d){
 	shift = s;
-	day = d;
+	weekday = w;
 	hr = h;
 	type = t;
+	day = d;
+	worker = NULL;
 }
 
 int Hour::getID() {
@@ -24,8 +26,16 @@ char Hour::getType() {
 	return type;
 }
 
+bool Hour::isDay() {
+	return day;
+}
+
 void Hour::show() {
 	std::cout << "This is shift number " << shift << ", which is of type " << type << "." << std::endl;
+}
+
+void Hour::setWorker(Worker* w) {
+	worker = w;
 }
 
 // void Hour::phours() {

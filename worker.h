@@ -14,19 +14,23 @@
 class Worker {
 	int dayHrs;
 	int hrs;
+  int maxHrs;
 	std::string name;
 	//int* schedule; // = new int [73];
   std::vector<int> schedule;
   public:
   	Worker();
-  	//Worker(std::string n);
+  	Worker(std::string n, int m);
   	//~Worker();
   	int getDayHrs();
   	int getHrs();
+    int getMaxHrs();
     std::vector<int> getSchedule();
   	void setSchedule(std::vector<int>& s);
   	void dHrs();
   	void dDayHrs();
+    void dMaxHrs();
+    void decHrs(bool d,bool n);
   	void show();
     void nameWorker(std::string n);
     void print();
