@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 17 November 2016
-  Last Modified: 4 January 2016
+  Last Modified:  January 2016
 
   This is a source code file for the worker class for an automatic shift scheduler.
 */
@@ -15,6 +15,11 @@ Worker::Worker() {
 	dayHrs = 2;
 	hrs = 8;
 	schedule = randSchedule();
+	// std::vector<int> temp(73,0);
+	// for (int i=0;i<73;++i) {
+	// 	schedule[i] = temp[i];
+	// }
+	//schedule = {0,0,0,0};
 }
 
 // Worker::Worker(std::string n) {
@@ -39,9 +44,9 @@ void Worker::dDayHrs(){
 	--dayHrs;
 }
 
-void Worker::setSchedule(std::vector<int> ts){
+void Worker::setSchedule(std::vector<int>& ts){
 	for(int i=0;i<73;++i){
-		schedule[i] = ts[i];
+		schedule.push_back(ts[i]);
 	}
 }
 
@@ -55,4 +60,8 @@ void Worker::show(){
 
 void Worker::nameWorker(std::string n){
 	name = n;
+}
+
+void Worker::print() {
+	std::cout << name;
 }

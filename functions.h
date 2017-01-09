@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 4 January 2017
-  Last Modified: 4 January 2017
+  Last Modified: 8 January 2017
 
   This is a header file for extra functions for testing for an automatic shift scheduler.
 */
@@ -15,10 +15,10 @@
   std::vector<int> randSchedule();
   std::string IDToShift(int id);
   bool sortByDayHours(Worker* lhs, Worker* rhs);
-  void dayHoursSort(std::vector<Worker> w);
-  bool sortByHours(const Worker &lhs, const Worker &rhs);
-  Worker* hoursSort(Worker* w);
-  bool sortByPreference(const Worker &lhs, const Worker &rhs);
-  Worker* preferenceSort(Worker* w);
+  void dayHoursSort(std::vector<Worker*>& w);
+  bool sortByHours(Worker* lhs, Worker* rhs);
+  void hoursSort(std::vector<Worker*>& w);
+  bool sortByPreference(Worker* lhs, Worker* rhs, int s);
+  void preferenceSort(std::vector<Worker*>& w,int s);
   Worker chooseBest(Hour h, std::vector<Worker> w);
 
