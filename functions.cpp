@@ -8,9 +8,11 @@
 
 #include "functions.h"
 #include <stdlib.h>
+#include <iostream>
+#include <algorithm>
 
-int* randSchedule() {
-	int* tempSchedule = new int [73];
+std::vector<int> randSchedule() {
+	std::vector<int> tempSchedule; // = new int [73];
 	for (int i=0;i<73;++i) {
 		tempSchedule[i] = rand() % 3;
 	}
@@ -18,6 +20,27 @@ int* randSchedule() {
 }
 
 std::string IDToShift(int id) {
-	//day hour type 
+	//day hour type
+	std::cout << "not implemented"; 
 	return "error";
+}
+
+bool sortByDayHours(Worker* lhs, Worker* rhs) {
+	return lhs->getDayHrs() > rhs->getDayHrs();
+}
+
+void dayHoursSort(std::vector<Worker> workers) {
+	//Worker temp [NUM_WORKERS] = (*workers);
+	std::vector<int> temp = {3,6,1,8};
+	std::sort(&temp[0],&temp[4]);
+	std::cout << temp[1] << std::endl;
+	//std::stable_sort(&workers[0],&workers[NUM_WORKERS])//,sortByDayHours);
+}
+
+Worker chooseBest(Hour hour,std::vector<Worker> workers) {
+	int shift = hour.getID();
+	for(int i=0;i<NUM_SHIFTS;++i) {
+		std::cout << "not done " << workers[i].getSchedule()[shift] << std::endl;
+	}
+	return workers[0];
 }

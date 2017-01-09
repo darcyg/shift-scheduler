@@ -39,13 +39,13 @@ void Worker::dDayHrs(){
 	--dayHrs;
 }
 
-void Worker::setSchedule(int* ts){
+void Worker::setSchedule(std::vector<int> ts){
 	for(int i=0;i<73;++i){
 		schedule[i] = ts[i];
 	}
 }
 
-int* Worker::getSchedule() {
+std::vector<int> Worker::getSchedule() {
 	return schedule;
 }
 

@@ -6,23 +6,25 @@
 */
 
 #ifndef Worker_H
-#define Inventory_H
+#define Worker_H
 
 #include <string>
+#include <vector>
 
 class Worker {
 	int dayHrs;
 	int hrs;
 	std::string name;
-	int* schedule; // = new int [73];
+	//int* schedule; // = new int [73];
+  std::vector<int> schedule;
   public:
   	Worker();
   	//Worker(std::string n);
   	//~Worker();
   	int getDayHrs();
   	int getHrs();
-    int* getSchedule();
-  	void setSchedule(int* s);
+    std::vector<int> getSchedule();
+  	void setSchedule(std::vector<int> s);
   	void dHrs();
   	void dDayHrs();
   	void show();

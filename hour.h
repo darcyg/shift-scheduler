@@ -10,22 +10,21 @@
 
 #include <string>
 #include "worker.h"
-#define NUM_WORKERS 3
 
 class Hour {
     int shift;
     char day;
     int hr;
     char type;
-    Worker* workers = new Worker [NUM_WORKERS];
+    //Worker* workers = new Worker [NUM_WORKERS];
   public:
     Hour(int s,char d,int h,char t);
     //~Hour();
     int getID();
     char getType();
     void show();
-    void phours();
-    int* getAval();
+    //void phours();
+    //int* getAval();
 };
 
 #endif

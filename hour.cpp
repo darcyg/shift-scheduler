@@ -28,17 +28,17 @@ void Hour::show() {
 	std::cout << "This is shift number " << shift << ", which is of type " << type << "." << std::endl;
 }
 
-void Hour::phours() {
-	for (int i=0;i<73;++i) {
-		std::cout << workers[0].getSchedule()[i] << " ";
-	}
-	std::cout << std::endl;
-}
+// void Hour::phours() {
+// 	for (int i=0;i<73;++i) {
+// 		std::cout << workers[0].getSchedule()[i] << " ";
+// 	}
+// 	std::cout << std::endl;
+// }
 
-int* Hour::getAval() {
-	int* aval = new int [NUM_WORKERS];
-	for (int i=0;i<NUM_WORKERS;++i){
-		aval[i] = workers[i].getSchedule()[shift];
-	}
-	return aval;
-}
+// int* Hour::getAval() {
+// 	int* aval = new int [NUM_WORKERS];
+// 	for (int i=0;i<NUM_WORKERS;++i){
+// 		aval[i] = workers[i].getSchedule()[shift];
+// 	}
+// 	return aval;
+// }

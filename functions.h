@@ -6,6 +6,19 @@
 */
 
   #include <string>
+  #include <vector>
+  #include "hour.h"
 
-  int* randSchedule();
+  #define NUM_SHIFTS 73
+  #define NUM_WORKERS 2
+
+  std::vector<int> randSchedule();
   std::string IDToShift(int id);
+  bool sortByDayHours(Worker* lhs, Worker* rhs);
+  void dayHoursSort(std::vector<Worker> w);
+  bool sortByHours(const Worker &lhs, const Worker &rhs);
+  Worker* hoursSort(Worker* w);
+  bool sortByPreference(const Worker &lhs, const Worker &rhs);
+  Worker* preferenceSort(Worker* w);
+  Worker chooseBest(Hour h, std::vector<Worker> w);
+
