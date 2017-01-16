@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 17 November 2016
-  Last Modified: 8 January 2017
+  Last Modified: 15 January 2017
 
   This is a header file for the hour class for an automatic shift scheduler.
 */
@@ -26,6 +26,9 @@ class Hour {
     bool isDay();
     void show();
     void setWorker(Worker* w);
+    Worker* getWorker();
+    std::string getDay();
+    std::string getHour();
     //void phours();
     //int* getAval();
 };

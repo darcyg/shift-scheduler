@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 17 November 2016
-  Last Modified:  January 2017
+  Last Modified: 15 January 2017
 
   This is a header file for the worker class for an automatic shift scheduler.
 */
@@ -34,6 +34,7 @@ class Worker {
   	void show();
     void nameWorker(std::string n);
     void print();
+    std::string getName();
 };
 
 #endif

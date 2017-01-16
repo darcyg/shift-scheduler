@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 8 January 2017
-  Last Modified: 8 January 2017
+  Last Modified: 15 January 2017
 
   This is a source file for the large needed vectors for an automatic shift scheduler.
 */
@@ -361,7 +361,7 @@ void buildShifts(std::vector<Hour*> week) {
 	Hour* n8s = new Hour(135,'s',16,'l',false);
 	week.push_back(n8s);
 	Hour* n14u = new Hour(136,'u',16,'l',false);
-	week.push_back(n8s);
+	week.push_back(n14u);
 
 	//maintenance
 	Hour* n28m = new Hour(137,'m',20,'m',false);
@@ -372,8 +372,8 @@ void buildShifts(std::vector<Hour*> week) {
 	week.push_back(n28w);
 	Hour* n28h = new Hour(140,'h',20,'m',false);
 	week.push_back(n28h);
-	Hour* n21f = new Hour(141,'f',20,'m',false);
-	week.push_back(n21f);
+	Hour* n22f = new Hour(141,'f',20,'m',false);
+	week.push_back(n22f);
 	Hour* n9s = new Hour(142,'s',15,'m',false);
 	week.push_back(n9s);
 	Hour* n15u = new Hour(143,'u',20,'m',false);

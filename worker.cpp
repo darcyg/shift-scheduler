@@ -1,6 +1,6 @@
 /*Author: Sophie Rehrig
   Date Started: 17 November 2016
-  Last Modified:  January 2016
+  Last Modified: 15 January 2016
 
   This is a source code file for the worker class for an automatic shift scheduler.
 */
@@ -83,4 +83,8 @@ void Worker::decHrs(bool isDay, bool isNeeded) {
 		--hrs;
 	}
 	--maxHrs;
+}
+
+std::string Worker::getName() {
+	return name;
 }
