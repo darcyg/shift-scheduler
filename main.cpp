@@ -35,10 +35,11 @@ void real() {
 	std::vector<Worker*> staff;
 	buildShifts(week);
 	buildStaff(staff);
-	for(int i=0;i<NUM_SHIFTS;++i) {
-		fillWorker(week[i],chooseBest(week[i],staff));
-	}
-	printSchedule(week);
+	std::cout << week[0] << staff[0] << std::endl;
+	// for(int i=0;i<NUM_SHIFTS;++i) {
+	// 	fillWorker(week[i],chooseBest(week[i],staff));
+	// }
+	// printSchedule(week);
 }
 
 

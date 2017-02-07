@@ -2,7 +2,7 @@ CC=g++
 
 CFLAGS=-c -Wall -std=c++11
 
-SOURCES=main.cpp worker.cpp hour.cpp functions.cpp
+SOURCES=main.cpp worker.cpp hour.cpp functions.cpp info.cpp
 
 OBJECTS=$(SOURCES:.cpp=.o)
 
